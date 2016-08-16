@@ -112,3 +112,40 @@ devePagar (Fisica,IRPF) = True
 devePagar (Fisica,_) = False
 devePagar (Juridica,IRPF) = False
 devePagar (Juridica,_) = True
+
+-- Pattern Matching na entrada da função eh possivel definir um valor padrao
+-- de entrada que se ajusta ao tipo em questão.
+agenda :: DiaSemana -> String --agenda é função
+agenda Sexta = "Dia de maldade"
+agenda Sabado = "Dia de ressaca"
+agenda Domingo = "Dia de descanso"
+agenda _ = "Dia de faculdade"
+-- Para testar, digite: agenda quinta
+
+
+--Nome funcao / Parametro / Tipo
+numDias :: Int -> Dia
+numDias 1 = Domingo
+numDias 2 = Segunda
+numDias 3 = Terca
+numDias 4 = Quarta
+numDias 5 = Quinta
+numDias 6 = Sexta
+numDias 7 = Sabado
+numDias _ = undefined
+-- Para retornar erro, digite: numDias 15
+-- Para retornar entre os dias da semana, digite: [Segunda .. Quinta]
+
+-- Para descobrir o tipo de uma lista, digite: :t [Segunda .. Quinta]
+
+-- Para descobrira a agenda dos dias digitados:
+-- [agenda x | x <- [Segunda .. Quinta]]
+-- Resultado: ["Dia de descanso"], ["Dia de descanso"], ["Dia de descanso"], ["Dia de descanso"], ["Dia de maldade"]
+
+-- DERIVINGS
+-- Show -> Para mostrar na tela um resultado daquele tipo
+-- Enum -> Para o uso de ..
+
+
+-- VALUE CONSTRUCTOR
+-- Fica sempre ao lado direito da igualdade da palavra data. Indica todos os valores assumidos por aquele tipo.
