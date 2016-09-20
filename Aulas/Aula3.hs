@@ -68,14 +68,56 @@ somarIdades _ _ = 0
 
 -}
 
-{-
 
-Exercicio: Faca o tipo Ponto com dois campos Double representando as posicoes x y na tela.
-Faca as funcoes: 
-moverX: move um ponto dx unidades na direçao x.
-A variavel dx eh um parametro
-moverY: move um ponto dy unidades na direçao y.
-A variavel dy eh um parametro
-mag:extrai a distancia da origem de um ponto.
 
--}
+-- RECORD SYNTAX: Eh possivel dar nomes aos
+-- campos dos VC. Esses nomes sao funcoes de projecao
+-- (GET)
+
+data Correncia = Euro | Real |  Dolar  deriving Show
+
+data Dinheiro = Dinheiro {valorDinheiro :: Double,
+                          currDinheiro :: Correncia}
+                          deriving Show
+
+data Sexo = M | F deriving Show
+
+data Pessoa = Pessoa {nomePessoa :: String,
+                      sexoPessoa :: Sexo,
+                      dinPessoa :: Dinheiro}
+                      deriving Show
+
+-- Em uma empresa Brasileira, um bonus mensal
+-- foi dado aos funcionarios. As mulheres gnharam
+-- 1500 reais e os homens 800. Nos Eua,
+-- mulheres e homens ganham 600 Dolares a mais.
+-- Na Europa nao ha bonus.
+
+bonus :: Pessoa -> Pessoa
+bonus (Pessoa n F (Dinheiro valor Real)) = Pessoa n F (Dinheiro (valor+1500) Real)
+bonus (Pessoa n M (Dinheiro valor Real)) = Pessoa n M (Dinheiro (valor+800) Real)
+bonus (Pessoa n s (Dinheiro valor Dolar)) = Pessoa n s (Dinheiro (valor+600) Dolar)
+bonus x = x
+
+-- EXEMPLO> Quero fazer uma funcao que some dois
+-- Dinheiro
+
+conversaoDolar :: Dinheiro -> Dinheiro
+conversaoDolar (Dinheiro valor Real) = Dinheiro (0.312437*valor) Dolar
+conversaoDolar (Dinheiro valor Euro) = Dinheiro (1.13*valor) Dolar
+conversaoDolar x = x
+
+conversaoEuro :: Dinheiro -> Dinheiro
+conversaoEuro (Dinheiro valor Real) = Dinheiro (0.275992226*valor) Euro
+conversaoEuro (Dinheiro valor Dolar) = Dinheiro (0.88*valor) Euro
+conversaoEuro x = x
+
+conversaoReal :: Dinheiro -> Dinheiro
+conversaoReal (Dinheiro valor Euro) = Dinheiro (3.62*valor) Real
+conversaoReal (Dinheiro valor Dolar) = Dinheiro (3.20*valor) Real
+conversaoReal x = x
+
+somarDinheiro :: Dinheiro -> Dinheiro -> Dinheiro
+somarDinheiro (Dinheiro v1 Real) v2 = Dinheiro (v1 + valorDinheiro (conversaoReal v2)) Real
+somarDinheiro (Dinheiro v1 Dolar) v2 = Dinheiro (v1 + valorDinheiro (conversaoDolar v2)) Dolar
+somarDinheiro (Dinheiro v1 Euro) v2 = Dinheiro (v1 + valorDinheiro (conversaoEuro v2)) Euro

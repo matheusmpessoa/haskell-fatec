@@ -132,3 +132,33 @@ Resposta: foldl (\xs x -> x:xs) [] "FATEC" Ou foldl (\x y -> y: x) [] "FATEC"
 Jeito do Prof: foldl (\x y -> [y] ++ x) "" "FATEC"
 -}
 
+
+
+-- HIGH-ORDER FUNCTIONS: Em Haskell as funcoes
+-- sao tratadas como valores comuns. Ou seja,
+-- sao passadas via parametro ou retornadas.
+
+-- CURRYING: Eh o ato de chamar funcao
+--com menos parametros do que definido. O resultado
+--disso eh uma funcao com os parametros restantes.
+
+-- EXPRESSAO LAMBDA: FUNCAO SEM CORPO.
+-- REPRESENTA UM VALOR DO TIPO FUNCAO
+
+dobro :: Int -> Int
+dobro x = 2*x
+
+aplicar :: (Int -> Int) -> Int
+aplicar f = 1 + f 10
+
+aplicar2 :: (Int -> Int -> Int) -> Int
+aplicar2 f = 1 + f 10 20
+
+somarTres :: Int -> Int -> Int -> Int
+somarTres x y z = x+y+z
+
+tamanho :: String -> Int
+tamanho x = length x
+
+rabo :: String -> String
+rabo x = tail x

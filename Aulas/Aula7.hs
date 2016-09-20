@@ -1,5 +1,7 @@
 module Aula7 where
 
+import Data.Monoid
+
 {-data Humano = Bia | Pedro deriving Show
 
 data Vampiro a = Vampiro a deriving Show
@@ -60,3 +62,23 @@ toList' x = [x+1]
 
 f :: Int -> Int
 f x = x+1
+
+
+
+safeDiv :: Double -> Double -> Maybe Double
+safeDiv _ 0 = Nothing
+safeDiv x y = Just (x/y)
+
+safeDiv' :: Double -> Double -> Maybe (Sum Double)
+safeDiv' _ 0 = Nothing
+safeDiv' x y = Just (Sum (x/y))
+
+validar :: String -> Maybe String
+validar "" = Nothing
+validar x = Just x
+
+func :: Int -> [Int]
+func x = [x]
+
+func2 :: Int -> Maybe Int
+func2 x = Just x

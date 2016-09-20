@@ -149,3 +149,33 @@ numDias _ = undefined
 
 -- VALUE CONSTRUCTOR
 -- Fica sempre ao lado direito da igualdade da palavra data. Indica todos os valores assumidos por aquele tipo.
+
+
+
+
+data Cor = Azul | Vermelho | Verde | Preto |
+           Branco deriving Show
+
+converter :: Cor -> (Int, Int, Int)
+converter Azul = (0, 0, 255)
+converter Verde = (0, 255, 0)
+converter Vermelho = (255, 0, 0)
+converter Preto = (0, 0, 0)
+converter Branco = (255, 255, 255)
+
+misturar :: (Cor, Cor) -> Cor
+misturar (Azul, Vermelho) = Verde
+misturar (_, Preto) = Preto
+misturar (Preto, _) = Preto
+misturar (x, Branco) = x
+misturar (Branco, x) = x
+misturar (_, _) = Azul
+
+somar1 :: Int -> Int -> Int
+somar1 x y = x+y
+
+somar2 :: (Int, Int) -> Int
+somar2 (x, y) = x+y
+
+trdInt :: (Int, Int, Int) -> Int
+trdInt (_, _, z) = z

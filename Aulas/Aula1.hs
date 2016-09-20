@@ -51,3 +51,11 @@ filtos n = [(-1) * x | x<-[0..n], x > 3, mod x 2 == 0]
 -- DOBRO DE TODOS OS NUMEROS DE 0 A N MAIORES QUE 12 E MENORES QUE 142
 
 dobrinho n = [x * 2 | x<-[0..n], x > 12, x < 142]
+
+
+
+ehPrimo :: Int -> Bool
+ehPrimo n = length ([x | x <- [2 .. (n-1)], mod n x == 0]) == 0
+
+lista :: [Int]
+lista = [x | x <- [2 .. 100], ehPrimo x]

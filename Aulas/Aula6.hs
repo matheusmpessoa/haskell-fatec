@@ -52,3 +52,50 @@ instance Show Item where
     show (_) = "Erro!"
     
 -- hask2-romefeller.c9.users.io / warp
+
+
+
+data Dia = Segunda | Terca | Quarta | Quinta |
+           Sexta | Sabado | Domingo deriving Show
+
+-- Coisa eh um tipo quassui um TYPE VARIABLE
+-- a e possui tres values constructors
+-- 1) UmaCoisa: possui um campo do tipo a
+-- 2) DuasCoisas: possui dois campos do tipo a
+-- 3) Nada: Sem campos
+
+-- POLIMORFISMO PARAMETRICO: A partir
+-- de uma type variable a, eh possivel
+-- montar estrutura especifica para
+-- cada a fixado.
+-- Exemplo: Coisa String, Coisa Int, ...
+-- [String], [Int], ...
+data Coisa a = Nada | UmaCoisa a |
+               DuasCoisas a a  deriving Show
+
+
+
+-- PARA FAZER UM TYPECLASS EH NECESSARIO DEFINIR UMA FUNCAO
+-- QUE TERA SEU COMPORTAMENTO DEPENDENTE DAS INSTANCIAS.
+-- NO CASO, SimNao Int tera que ter uma funcao
+-- resposta :: Int -> Bool
+class SimNao a where
+    resposta :: a -> Bool
+
+instance SimNao Int where
+    resposta 0 = False
+    resposta _ = True
+
+instance SimNao Bool where
+    resposta = id
+
+instance SimNao Char where
+    resposta x
+        | elem x "AEIOUaeiou" = True
+        | otherwise = False
+
+func :: (Show a, SimNao a) => a -> String
+func x = (reverse . show . resposta) x
+
+foo :: (Show a) => a -> Bool
+foo y = "Ola" == (show y)
