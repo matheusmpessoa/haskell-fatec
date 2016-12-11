@@ -1,4 +1,4 @@
-# haskell-fatec
+# haskell
 Exemplos e exercícios práticos utilizando a linguagem 'haskell' para a matéria de programação funcional da Fatec Rubens Lara.
 
 Conteúdo desse repositório:

@@ -1,6 +1,6 @@
 module ListaEx where
 {-
-   Faça uma função que retorne o desvio padrão de um [Double] usando foldl. 
+   Faça uma função que retorne o desvio padrão de um [Double] usando foldl.
  O desvio padrão de um vetor é dado por σ =rPn i=1(xi−x)2 n−1, onde x é a média deste vetor
 
 
@@ -24,4 +24,4 @@ somaPopulacao (a:x) = a + somaPopulacao x
 
 mediaX :: [Int] -> Double
 mediaX [] = 0.0
-mediaX 
+mediaX
