@@ -15,13 +15,13 @@ amor Pedro = Bia
 
 -- pra chamar:
 fmap amor (Vampiro Bia)
--- Vampiro Pedro 
+-- Vampiro Pedro
 
 -}
 
 ------------------------------------------
 
-data Valido a = Sim a | Nao 
+data Valido a = Sim a | Nao
 -- data Maybe a = Just a | Nothing
 
 {-instance Functor Valido where
@@ -38,7 +38,7 @@ instance (Show a) => Show (Valido a) where
 
 -- (\?) para nomear a função pode ser qualquer coisa
 -- para chamar:
--- safeDiv 4 2 
+-- safeDiv 4 2
 -- Sim 2.0
 -- A diferença do 2.0 do 2 é que o 2.0 passou por um processo para ser validado
 

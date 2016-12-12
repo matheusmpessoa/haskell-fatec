@@ -52,12 +52,12 @@ fusao (Fisica nome idade) (Fisica nome2 idade2) = Fisica (nome ++ nome2) (idade+
 -- console: fusao (Fisica "Matheus" 20) (Fisica "Pedro 20)
 
 
-{- 
+{-
 RECORD SYNTAX - Sintaxe de registro (algo que ajuda a dar nome aos campos dos values constructors)
 Obs.: é possivel criar um value constructor com o mesmo nome do data Constructor
 
-data Pessoa = Fisica {pessoaNome :: String, 
-                        pessoaIdade :: Int} | 
+data Pessoa = Fisica {pessoaNome :: String,
+                        pessoaIdade :: Int} |
                 Juridica {pessoaNome :: String} deriving Show
 Console: Fisica "Matheus" 19
 Console: pessoaIdade "Matheus" 19

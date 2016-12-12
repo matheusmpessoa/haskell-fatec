@@ -11,9 +11,9 @@ instance (Show a) => Show (Bolsa a) where
     show (Mochila x y) = "Uma mochila com " ++ show x ++ " "
 
 --Sempre vai ser char
-data Tipo = ValueC1 Char | 
-            ValueC2 Char Char | 
-            ValueC3 Char Char Char 
+data Tipo = ValueC1 Char |
+            ValueC2 Char Char |
+            ValueC3 Char Char Char
 
 
 -- Pattern Matching
@@ -40,17 +40,17 @@ somarBolsa _ _ = Bolsa 0
 -- Exercicio
 -- Crie o tipo Item com os value constructors
 -- Borracha, Lapis, Caneta e Pincel
--- Crie uma instancia de show de modo a mostrar a msg: 
+-- Crie uma instancia de show de modo a mostrar a msg:
 -- Item escolhido: Pincel, por exemplo
 data Item = Borracha  | Lapis | Caneta | Pincel
 -- Apenas tipos a que sejam instancia de Show
 instance Show Item where
-    show (Borracha) = "Item escolhido: Borracha " 
+    show (Borracha) = "Item escolhido: Borracha "
     show (Lapis) = "Item escolhido: Lapis"
     show (Caneta) = "Item escolhido: Caneta"
     show (Pincel) = "Item escolhido: Pincel"
     show (_) = "Erro!"
-    
+
 -- hask2-romefeller.c9.users.io / warp
 
 

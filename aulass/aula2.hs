@@ -28,7 +28,7 @@ numDias Quinta = 5
 numDias Sexta = 6
 numDias Sabado = 7
 
-{- 
+{-
 Faca uma funcao chamada salario que implemente
 a seguinte regra de negocio:
 - Todo trabalhador aos domingos ganha o dobro do salario
@@ -44,7 +44,7 @@ salario Domingo x = x*2
 salario Sabado x = x*1.75
 salario _ x = x
 
-{- 
+{-
 Faca o tipo Day que possua como value
 constructors os dias da semana em ingles.
 Faca as funcoes traduzirIP que traduz os dias
@@ -70,7 +70,7 @@ traduzirPI Thursday = Quinta
 traduzirPI Friday = Sexta
 traduzirPI Saturday = Sabado
 
-{- 
+{-
 reverse.show.traduzirIP $ Wed
 reverse (show (traduzirIP Wed))
 (reverse.show.traduzirIP) Wed
@@ -85,15 +85,15 @@ mult x = fst x * snd x
 mult' :: (Int, Int) -> Int
 mult' (x,y) = x*y
 
-{- 
+{-
 
-1) Faca uma funcao que receba um inteiro e 
+1) Faca uma funcao que receba um inteiro e
 eh retornado o dobro - deste inteiro -
 na primeira coordenada de uma tupla,
 o triplo na segunda e o quadruplo na terceira.
 
 2) Faca o tipo Pessoa que pode ser Fisica ou Juridica,
-e o tipo Imposto que pode ser ISS, IRPF ou ICMS. 
+e o tipo Imposto que pode ser ISS, IRPF ou ICMS.
 Faca a funcao devePagar que recebe uma tupla de Pessoa e um Imposto.
 Esta funcao informa se esta pessoa deve pagar ou nao este imposto.
 

@@ -1,12 +1,12 @@
 module Aula4 where
-    
+
 data Unidade = Unidade deriving Show
 
--- unidade eh um tipo que tem um value constructor, a propria unidade    
+-- unidade eh um tipo que tem um value constructor, a propria unidade
 -- Os values constructors sao os valores dos data constructors.
 -- Os value constructors podem carregar campos.
 -- data Binario = Zero | Um
--- data Pessoa = Fisica String Int | Juridica String 
+-- data Pessoa = Fisica String Int | Juridica String
 -- () -> significa a unidade (unity)
 
 
@@ -47,14 +47,14 @@ foo2 x = 0
 -- eh a tecnica que consiste em transformar uma funcao
 -- em uma sequencia de funcoes com menos prametros que a original
 -- ex: let f = somar 5 //atribui ao f a funcao de somar mais 5
--- f 10 
+-- f 10
 -- 15
 somar :: Int -> Int -> Int
 somar x y = x+y
 
 ----------------------
 
--- 2) funcao anonima(lambda): p1 p2 p3 ... pn -> EXPRESSAO 
+-- 2) funcao anonima(lambda): p1 p2 p3 ... pn -> EXPRESSAO
 --exemplo (\x -> 2*x)
 -- pode calcular a hora que quiser
 --ex: let soma3 = (\x y -> x+y) 3
@@ -110,7 +110,7 @@ maior (Pessoa _ idade) = idade >= 18
 --filter (\(Pessoa _ idade) -> idade >=18)
 
 filtrarMaiores :: [Pessoa] -> [Pessoa]
-filtrarMaiores xs = filter maior xs 
+filtrarMaiores xs = filter maior xs
 -- let ps = [Pessoa "Joao" 24, Pessoa "Guilherme" 34, Pessoa "Beatriz" 20, Pessoa "Matheus" 15]
 -- filtrarMaiores ps
 -- [Pessoa "Joao" 24,Pessoa "Guilherme" 34,Pessoa "Beatriz" 20]
@@ -130,7 +130,7 @@ data Metragem = Metro | Kilometro deriving Show
 data Medida = Medida Double Metragem deriving Show
 
 --Medida carrega um Double e uma Metragem em sua declaracao
-converter :: Medida -> Medida 
+converter :: Medida -> Medida
 converter (Medida x Metro) = Medida (x/1000) Kilometro
 converter (Medida x Kilometro) = Medida (x*1000) Metro
 

@@ -19,7 +19,7 @@ tng x = [x+2]
 g :: Int -> Int
 g x = x+2
 
-{-- 
+{--
 (tnf <=< tng) 3 = join(fmap tnf (tng(3)))
 primeiro calcula tng em 3 resultando [5],
 depois joga tnf, via fmap, para dentro de [5]
@@ -62,15 +62,15 @@ main2 = do
     putStrLn "Digite um numero: "
     x <- readLn
     putStrLn ("O numero eh: " ++ show(x+1))
-    
+
 main2' :: IO ()
 main2' = putStrLn "Digite um numero " >>
         getLine >>= \x -> putStrLn ("O numero eh: " ++ show(x+1))
-        
 
-        
-{-- 
-1) Faca um programa que receba string do teclado 
+
+
+{--
+1) Faca um programa que receba string do teclado
 e mostre-o em ordem reversa (imperativa)
 
 2) Faca um programa que multiplique dois numeros (funcional)
@@ -79,4 +79,4 @@ e mostre-o em ordem reversa (imperativa)
 ex1 :: IO ()
 ex1 = putStrLn "Digite uma palavra " >>
     getLine >>= \x -> putStrLn ("A palavra eh" ++ show(reverse(x)))
-    
+

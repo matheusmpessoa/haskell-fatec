@@ -8,13 +8,13 @@ fat k = k * fat(k-1) --}
 {-- GUARDS pra cada | inserido é uma condiçao que ele vai testar ate chegar no otherwise:
         uma serie de verificações booleanas executadas em ordem ate chegar no otherwise--}
 fat :: Integer -> Integer
-fat k 
+fat k
      | k <= 1 = 1
      | otherwise = k * fat (k-1)
-     
+
 
 fib :: Integer -> Integer
-fib n 
+fib n
     |n <= 2 = 1
     | otherwise = fib (n-1) + fib (n-2)
 {-- map fib [1..10]
@@ -28,7 +28,7 @@ eliminarVogais [] = [] --se chegar no fim da lista retorna []
 eliminarVogais (x:xs)
                | elem x "AEIOUaeiou" = eliminarVogais xs
                | otherwise = x : eliminarVogais xs -- : coloca um caractere na frente da lista
-               
+
 -- a recursao elimina a palavra ate chegar no vazio
 
 {-- exercicio: Faca recursivamente o que se pede:
@@ -83,7 +83,7 @@ foo "D" = "D"
 
 saida:
 "DD"
-    
+
 -}
 
 ----------------------------------------------------------
@@ -96,7 +96,7 @@ saida:
 = foldl (+) (0+1+2+3+5) [10]
 = foldl (+) (0+1+2+3+5+10) []
 
-= (0+1+2+3+5+10) = 21 
+= (0+1+2+3+5+10) = 21
 ------------------------------
 
 foldl (\x y -> lenght y) 0 ["FATEC", "SANTOS", "AMA", "JAVA"]
@@ -117,7 +117,7 @@ y eh alguem da lista
 O FOLDL SEMPRE USA UMA FUNCAO DE DOIS PARAMETROS
 
 a) FAÇA UM FOLDL PARA CONTAR LETRAS DE UMA PALAVRA
-Resposta: foldl (\x _ -> x+1) 0 "FATEC" 
+Resposta: foldl (\x _ -> x+1) 0 "FATEC"
           5
 Teste:
 foldl (\x _ -> x+1) 0 "ABA"
@@ -127,7 +127,7 @@ foldl (\x _ -> x+1) 0 "ABA"
 = 3
 
 b) FAÇA UMA FOLDL PARA REVERTER UMA STRING
-Resposta: foldl (\xs x -> x:xs) [] "FATEC" Ou foldl (\x y -> y: x) [] "FATEC" 
+Resposta: foldl (\xs x -> x:xs) [] "FATEC" Ou foldl (\x y -> y: x) [] "FATEC"
           CETAF
 Jeito do Prof: foldl (\x y -> [y] ++ x) "" "FATEC"
 -}
