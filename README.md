@@ -4,5 +4,5 @@ Exemplos e exercícios práticos utilizando a linguagem 'haskell' para a matéri
 Conteúdo desse repositório:
 * __[Aulas](aulass)__
 * __[Exercicios extra](exercicios)__
-* __[Monitoria](monitoria)__
-* __[Provas](provas)__
+* __[Monitoria](monitoria-de-aulas)__
+* __[Provas](prova)__

@@ -8,7 +8,7 @@ a. monte uma expressão (usando o ghci) para o que se pede
     (\x -> (Just(reverse(x)))) "batata"
     4. lambda para o maior numero entre os números x e 12
     (\x -> x (max x 12)) 15
-    
+
 b. Dê o tipo das seguintes funções
     1. \x ->["Olá" ++ x]
         String -> [String]

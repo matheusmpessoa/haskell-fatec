@@ -20,13 +20,13 @@ retorna o menor então o maior se torna o elemento neutro-}
 instance Monoid Min where
     mempty = Min (maxBound)
     mappend (Min a)(Min b) = Min (min a b)
- 
+
 minAll :: [Min]->Min
 minAll x = mconcat x
-    
-   
-    
-{-    
+
+
+
+{-
 O tipo data Valido a = Sim a | Nao representa um contˆeiner de valores v´alidos. Usando este tipo
 (a) (0.5) Crie uma instˆancia de Funtor para Valido.
 (b) (1.0) Fa¸ca uma fun¸c˜ao safeLog :: Double → Double → V alido Double que faz o log (n˜ao h´a log de n´umeros
@@ -50,7 +50,7 @@ safeLog x y |x < 0 = Nao
 funcLog = safeLog 4 9
 
 elevarTodos :: [Valido Double] -> [Valido Double]
-elevarTodos [] = [] 
+elevarTodos [] = []
 elevarTodos xs = map (fmap (**2)) xs
 
 {-
@@ -84,12 +84,12 @@ Dica: foldl com valor inicial [ [ ] ]. Tipo do foldl :: (b− > a− > b)− > b
 
 foo :: String -> [String]
 foo [] = [[]]
-foo (x:xs) = xss ++ map (x:) xss 
+foo (x:xs) = xss ++ map (x:) xss
     where xss = foo xs
 
 
 
-{-    
+{-
 (a) (1.0) Qual o valor da express˜ao wd [8,9,1,3,-2];
 (b) (0.5) Fa¸ca o ”teste de mesa” da express˜ao acima;
 (c) (0.5) Explique com clareza a linha 3.
@@ -105,5 +105,5 @@ wd (x:xs) = wd sm ++ [x] ++ wd ms
         where
             ms = filter(>=x) xs
             sm = filter(< x) xs
-   
+
 
